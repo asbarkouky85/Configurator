@@ -1,0 +1,82 @@
+<div class="page-header container-fluid" *ngIf="!IsEmbedded !HideHeader">
+    <div class="row">
+        <div class="col-sm-5 col-xs-12">
+            <h2>{{'Pages.NavigationPages__NavGroupPages' | translate }}<span *ngIf="HeaderExtra"> - {{HeaderExtra}}</span></h2>
+        </div>
+
+        <div class="col-sm-7 col-xs-12">
+            <div class="row">
+
+                <div class="col-md-12 col-xs-12 padTop padBottom">
+                    <div class="pull-last btn-group">
+
+                        
+
+    <button class="btn btn-primary"
+            (click)="save()"
+            
+             title="{{'Words.Save' | translate }}">
+        <i class="fa fa-save fa-lg"></i> 
+    </button>
+
+    <button class="btn btn-success"
+            (click)="AddPage()"
+            
+             title="{{'Words.AddPagesToGroup' | translate }}">
+        <i class="fa fa-plus fa-lg"></i> 
+    </button>
+                        
+    <button class="btn btn-info margin-sides"
+            (click)="Refresh()"
+            
+            >
+        <i class="fa fa-redo"></i> 
+    </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row" *ngIf="!IsEmbedded">
+        <ol class="breadcrumb">
+    <li>
+        <a routerLink="/">{{'Words.Main' | translate }}</a>
+    </li>
+        <li>
+        {{'Pages.NavigationPages__NavGroupPages' | translate }}
+    </li>
+</ol>
+    </div>
+</div>
+
+<div class="page-header section-header" *ngIf="IsEmbedded && !HideHeader">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                {{'Pages.NavigationPages__NavGroupPages' | translate }}<span *ngIf="HeaderExtra"> - {{HeaderExtra}}</span>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+</div><div [ngClass]="IsEmbedded?'panel panel-default embedded':'animated fadeInRight'">
+    <div [ngClass]="IsEmbedded?'panel-body':'container-fluid'">
+        
+<div class="row">
+    <div class="col-md-4">
+        <naveList #NaveList [IsEmbedded]='true' (valueChange)="getPages($event)"></naveList>
+    </div>
+    <div class="col-md-8">
+        <navigationPageList #NavigationPageList [IsEmbedded]='true'></navigationPageList>
+    </div>
+</div>
+        
+        
+    </div>
+</div>
+
+<div style='display:none' #lookupOptionsContainer values=''></div>
+<div style='display:none' #viewParamsContainer values='{"ModelType":null,"AddUrl":null,"EditUrl":null,"DetailsUrl":null,"ListUrl":null,"Fields":[],"Other":{"NaveList":"Routing/NaveList","NavigationPageList":"Routing/NavigationPageList"}}'></div>
