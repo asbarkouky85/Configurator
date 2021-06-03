@@ -2,8 +2,8 @@ import { Component, Injector } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Shell } from "codeshell";
 import { BaseComponent } from "codeshell/base-components";
-import { AppComponentBase } from "./app-base.component";
-import { Tenant } from "./Models";
+import { AppComponentBase } from "./app-component-base.component";
+import { Tenant } from "./models";
 
 @Component({ template: '' })
 export abstract class TenantComponentBase extends BaseComponent {

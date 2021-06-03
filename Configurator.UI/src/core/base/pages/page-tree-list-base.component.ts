@@ -1,8 +1,8 @@
 ﻿import { Component, ViewChild, Injector } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { DomainTreeBase, DomainCountMode } from "@base/domains/domain-tree-base.component";
-import { PagesService, TenantsService, DomainsService } from "@base/Http";
-import { Tenant } from "@base/Models";
+import { PagesService, TenantsService, DomainsService } from "@base/http";
+import { Tenant } from "@base/models";
 import { TenantComponentBase } from "@base/tenant-component-base";
 import { Shell } from "codeshell";
 import { RecursionModel } from "codeshell/recursion";

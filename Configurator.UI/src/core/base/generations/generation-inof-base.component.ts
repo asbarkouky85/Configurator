@@ -2,7 +2,7 @@
 import { ActivatedRoute } from "@angular/router";
 import { OutPutListener } from "@base/http/out-put-listener";
 import { ServerGenerationService } from "@base/http/servergeneration.service";
-import { LogMessage } from "@base/Models";
+import { LogMessage } from "@base/models";
 import { BaseComponent } from "codeshell/base-components";
 import { SubmitResult } from "codeshell/results";
 
@@ -19,6 +19,7 @@ export abstract class GenerationInofBase extends BaseComponent {
 
     OutListener = new OutPutListener();
     Generation = new ServerGenerationService();
+    CurrentLang = "ar";
 
     constructor(rt: ActivatedRoute, res: Injector) {
         super(rt, res);

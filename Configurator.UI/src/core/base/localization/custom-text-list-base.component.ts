@@ -1,10 +1,10 @@
 ﻿import { Component, Injectable, Injector } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { AppComponentBase } from "@base/app-base.component";
+import { AppComponentBase } from "@base/app-component-base.component";
 import { CustomTextRequest } from "@base/dtos";
 import { TextTypes } from "@base/enumerations";
-import { CustomTextsService } from "@base/Http";
-import { Tenant } from "@base/Models";
+import { CustomTextsService } from "@base/http";
+import { Tenant } from "@base/models";
 import { Shell } from "codeshell";
 import { ListComponentBase } from "codeshell/base-components";
 import { LoadOptions, ListItem } from "codeshell/data";

@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
-import { AppComponentBase } from "@base/app-base.component";
+import { AppComponentBase } from "@base/app-component-base.component";
 import { TasksListener } from "@base/http/tasks-listener";
-import { Tenant } from "@base/Models";
+import { Tenant } from "@base/models";
 import { AppInfo, ServerConfig } from "@base/server-config";
 import { Shell, ServerConfigBase } from "codeshell";
 import { TopBarBase } from "codeshell/base-components";

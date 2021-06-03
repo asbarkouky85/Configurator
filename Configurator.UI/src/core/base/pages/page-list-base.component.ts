@@ -1,5 +1,5 @@
 ﻿import { Component } from "@angular/core";
-import { PagesService } from "@base/Http";
+import { PagesService } from "@base/http";
 import { Shell } from "codeshell";
 import { ListComponentBase } from "codeshell/base-components";
 import { RecursionModel } from "codeshell/recursion";

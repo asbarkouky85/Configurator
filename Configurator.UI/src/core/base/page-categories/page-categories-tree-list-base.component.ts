@@ -1,6 +1,6 @@
 ﻿import { Component, ViewChild } from "@angular/core";
 import { DomainTreeBase, DomainCountMode } from "@base/domains/domain-tree-base.component";
-import { PageCategoriesService, DomainsService } from "@base/Http";
+import { PageCategoriesService, DomainsService } from "@base/http";
 import { Shell } from "codeshell";
 import { BaseComponent } from "codeshell/base-components";
 import { ComponentRequest } from "codeshell/components";

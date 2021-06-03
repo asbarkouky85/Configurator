@@ -1,9 +1,9 @@
 ﻿import { Component, Injector } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { AppComponentBase } from "@base/app-base.component";
+import { AppComponentBase } from "@base/app-component-base.component";
 import { ParameterRequestDTO } from "@base/dtos";
 import { ParameterRequestTypes } from "@base/enumerations";
-import { PageParametersService } from "@base/Http";
+import { PageParametersService } from "@base/http";
 import { Shell } from "codeshell";
 import { ListComponentBase } from "codeshell/base-components";
 import { LoadOptions } from "codeshell/data";

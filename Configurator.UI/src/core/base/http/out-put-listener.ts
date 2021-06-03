@@ -1,4 +1,4 @@
-import { LogMessage } from "@base/Models";
+import { LogMessage } from "@base/models";
 import { ServerConfig } from "@base/server-config";
 import { ServerEventListner } from "codeshell/http";
 import { Observable } from "rxjs";

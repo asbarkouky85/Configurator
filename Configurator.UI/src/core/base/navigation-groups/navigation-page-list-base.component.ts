@@ -1,6 +1,6 @@
 ﻿import { Component } from "@angular/core";
 import { Injectable } from "@angular/core";
-import { NavigationGroupsService } from "@base/Http";
+import { NavigationGroupsService } from "@base/http";
 import { PageSelectBase, PageTypes } from "@base/pages/page-select-base.component";
 import { Shell } from "codeshell";
 import { ListComponentBase } from "codeshell/base-components";

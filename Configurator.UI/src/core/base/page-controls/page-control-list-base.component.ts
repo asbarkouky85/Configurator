@@ -1,11 +1,11 @@
 ﻿import { Component } from "@angular/core";
 import { PageParameterDTO } from "@base/dtos";
 import { PageParameterTypes } from "@base/enumerations";
-import { PageControlsService, PagesService } from "@base/Http";
+import { PageControlsService, PagesService } from "@base/http";
 import { ServerGenerationService } from "@base/http/servergeneration.service";
 import { PageTypes, PageSelectBase } from "@base/pages/page-select-base.component";
 import { Shell, Utils } from "codeshell";
-import { BaseComponent } from "codeshell/base-components";
+import { BaseComponent, EditComponentBase } from "codeshell/base-components";
 import { ComponentRequest } from "codeshell/components";
 import { ListItem, LoadOptions } from "codeshell/data";
 import { SubmitResult } from "codeshell/results";
@@ -13,11 +13,13 @@ import { Permission } from "codeshell/security";
 
 @Component({ template: '' })
 export abstract class PageControlListBase extends BaseComponent {
-    get Service(): PageControlsService { return Shell.Injector.get(PageControlsService); }
-    get Pages(): PagesService { return Shell.Injector.get(PagesService); }
+    Service = new PageControlsService()
+    Pages = new PagesService();
 
     Gen: ServerGenerationService = new ServerGenerationService();
 
+
+    CurrentLang = "en";
     list: any[] = [];
     pageId?: number;
     tenantId: number = 0;
@@ -124,6 +126,7 @@ export abstract class PageControlListBase extends BaseComponent {
     }
 
     Clear(type: string) {
+
         this.pageRoute[type + "String"] = null;
         this.pageRoute[type] = null;
         this.pageRoute.isChanged = true;

@@ -2,7 +2,7 @@
 import { ServerConfigBase } from "../serverConfigBase";
 import { Shell } from "../shell";
 import { HttpRequest, Methods } from "./httpRequest";
-import { TokenData } from "../security/Models";
+import { TokenData } from "../security/models";
 import { SubmitResult } from "../results";
 import { Utils } from "../utilities/utils";
 import { TokenStorage } from '../security/tokenStorage';

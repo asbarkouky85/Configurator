@@ -1,7 +1,7 @@
 ﻿import { Component, Injector } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { GenerationInofBase } from "@base/generations/generation-inof-base.component";
-import { TenantsService } from "@base/Http";
+import { TenantsService } from "@base/http";
 import { OutPutListener } from "@base/http/out-put-listener";
 import { ServerGenerationService } from "@base/http/servergeneration.service";
 import { Utils } from "codeshell";

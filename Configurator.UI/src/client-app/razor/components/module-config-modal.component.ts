@@ -10,7 +10,7 @@ export class ModuleConfigModal extends ModulesConfigBase {
 	@ViewChild("Form")
 	Form?:NgForm;
 
-	ViewParams = {"AddUrl":null,"EditUrl":null,"DetailsUrl":null,"ListUrl":null,"Fields":[],"Other":{"server_tracer":"Razor/ServerTracerEmbed"}};
+	ViewParams = {"AddUrl":null,"EditUrl":null,"DetailsUrl":null,"ListUrl":null,"Fields":[],"Other":{"server_tracer":"app-razor/server-tracer-embed"}};
 	LookupOptions = {
   "modules": "C0"
 };

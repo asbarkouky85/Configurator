@@ -6,7 +6,7 @@ import { ComponentLoader } from "codeshell/directives";
 import { SessionManager, UserDTO } from "codeshell/security";
 import { Stored } from "codeshell/services";
 import { GenerationInofBase } from "./generations/generation-inof-base.component";
-import { TenantsService } from "./Http";
+import { TenantsService } from "./http";
 import { Tenant, UseState } from "./models";
 import { AppInfo, ServerConfig } from "./server-config";
 

@@ -1,7 +1,7 @@
 ﻿import { Component, ViewChild, Injector } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { GenerationInofBase } from "@base/generations/generation-inof-base.component";
-import { DomainsService } from "@base/Http";
+import { DomainsService } from "@base/http";
 import { OutPutListener } from "@base/http/out-put-listener";
 import { Shell } from "codeshell";
 import { EditComponentBase } from "codeshell/base-components";

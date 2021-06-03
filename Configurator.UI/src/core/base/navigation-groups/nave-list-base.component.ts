@@ -1,6 +1,6 @@
 ﻿import { Component } from "@angular/core";
 import { Injectable, Output } from "@angular/core";
-import { NavigationGroupsService } from "@base/Http";
+import { NavigationGroupsService } from "@base/http";
 import { Shell } from "codeshell";
 import { ListComponentBase } from "codeshell/base-components";
 import { LoadOptions } from "codeshell/data";

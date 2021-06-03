@@ -1,5 +1,5 @@
 ﻿import { Component } from "@angular/core";
-import { ResourcesService } from "@base/Http";
+import { ResourcesService } from "@base/http";
 import { Shell } from "codeshell";
 import { EditComponentBase } from "codeshell/base-components";
 

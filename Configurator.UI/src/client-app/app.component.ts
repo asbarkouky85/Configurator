@@ -1,8 +1,8 @@
 ﻿import { Component, Injector } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { AppComponentBase } from '@base/app-base.component';
 
 import { Shell } from 'codeshell/main';
+import { AppComponentBase } from '@base/app-component-base.component';
 
 @Component({
     selector: 'app',

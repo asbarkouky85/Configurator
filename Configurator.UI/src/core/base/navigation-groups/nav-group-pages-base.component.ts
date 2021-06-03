@@ -1,7 +1,7 @@
 ﻿import { Injectable, ViewChild, Injector, Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { NavigationGroupsService } from "@base/Http";
-import { Tenant } from "@base/Models";
+import { NavigationGroupsService } from "@base/http";
+import { Tenant } from "@base/models";
 import { TenantComponentBase } from "@base/tenant-component-base";
 import { Shell } from "codeshell";
 import { ListItem } from "codeshell/data";

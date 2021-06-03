@@ -76,21 +76,9 @@
             </div>
         </div>
     </div>
-</div>
-<div [ngClass]="IsEmbedded?'panel panel-default embedded body':'animated fadeInRight'">
-    <div [ngClass]="IsEmbedded?'panel-body':'container-fluid content-block'">
-        <div class="row">
-            <div class="col-md-4" style="padding: 10px 24px;color:#9B9B9B">
-                <span><b>{{'Words.Count' | translate }}</b> : <span style="color:#9B9B9B">{{totalCount}}</span></span>
-            </div>
-            <div class="col-md-8">
-                <search-group (termChange)="HeaderSearch($event)"></search-group>
-            </div>
-        </div>
-        <paginate [showing]="options.Showing" [total-count]="totalCount" [max-pages]="10" [(currentPage)]="pageIndex" (pageChange)="PageSelected($event)"></paginate>
-
-        <div class="table-responsive">
-            
+</div><div [ngClass]="IsEmbedded?'panel panel-default embedded':'animated fadeInRight'">
+    <div [ngClass]="IsEmbedded?'panel-body':'container-fluid'">
+        
 <div class="col-md-12">
     <div class="row">
         <div class="row form-group " >
@@ -620,9 +608,7 @@
 
 
 
-        </div>
-
-        <paginate [showing]="options.Showing" [total-count]="totalCount" [max-pages]="10" [(currentPage)]="pageIndex" (pageChange)="PageSelected($event)"></paginate>
+        
+        
     </div>
-
 </div>

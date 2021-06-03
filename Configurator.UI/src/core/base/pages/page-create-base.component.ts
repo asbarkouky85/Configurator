@@ -1,7 +1,7 @@
 ﻿import { Component } from "@angular/core";
-import { AppComponentBase } from "@base/app-base.component";
+import { AppComponentBase } from "@base/app-component-base.component";
 import { DomainTreeBase } from "@base/domains/domain-tree-base.component";
-import { PagesService, DomainsService } from "@base/Http";
+import { PagesService, DomainsService } from "@base/http";
 import { ConfigPagesService } from "@base/http/configpages.service";
 import { Shell } from "codeshell";
 import { EditComponentBase } from "codeshell/base-components";

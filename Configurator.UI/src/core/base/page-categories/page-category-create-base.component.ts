@@ -1,16 +1,16 @@
 ﻿import { Component } from "@angular/core";
-import { PageCategoriesService, ResourcesService } from "@base/Http";
-import { BaseComponentList } from "@base/Models";
+import { PageCategoriesService, ResourcesService } from "@base/http";
+import { BaseComponentList } from "@base/models";
 import { Shell } from "codeshell";
-import { BaseComponent } from "codeshell/base-components";
+import { BaseComponent, EditComponentBase } from "codeshell/base-components";
 import { ListItem } from "codeshell/data";
 
-@Component({template:''})
-export abstract class PageCategoryCreateBase extends BaseComponent {
+@Component({ template: '' })
+export abstract class PageCategoryCreateBase extends EditComponentBase {
 
-    get Service(): PageCategoriesService { return Shell.Injector.get(PageCategoriesService); }
+    Service = new PageCategoriesService();
     res: ResourcesService = new ResourcesService();
-    
+
     SelectedItems: any[] = [];
     list: any[] = [];
     baseComponentList: BaseComponentList[] = [
@@ -29,12 +29,12 @@ export abstract class PageCategoryCreateBase extends BaseComponent {
 
     async StartAsync(): Promise<void> {
         await this.getResources();
-        var res:any[] = await this.Service.GetTemplate();
+        var res: any[] = await this.Service.GetTemplate();
         this.list = [];
-        
+
         for (var i in res)
             this.list[i] = ListItem.Detached(res[i]);
-        
+
     }
 
     DeleteTemplate(item: any) {
