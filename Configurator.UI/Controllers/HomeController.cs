@@ -1,20 +1,17 @@
 ﻿using CodeShellCore.Web.Controllers;
-using CodeShellCore.Web.Moldster;
-using CodeShellCore.Web.Moldster.Configurator;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using CodeShellCore.Web.Filters;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Configurator.UI.Controllers
 {
-    public class HomeController : MoldsterUIController
+    [QueryAuthorizeFilter(AllowAnonymous = true)]
+    public class HomeController : BaseMvcController
     {
-        public override string DefaultDomain => "ClientApp";
-        public override IServerConfig ServerConfig => new ConfiguratorServerConfig();
-        public override string GetDefaultTitle(string loc)
+
+        public IActionResult Index()
         {
-            return "Configurator";
+            var file = System.IO.File.ReadAllBytes("wwwroot/index.html");
+            return File(file, "text/html");
         }
     }
 }

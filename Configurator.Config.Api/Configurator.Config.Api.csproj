@@ -59,7 +59,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CodeShellCore.Web.Razor" Version="5.0.6" />
+    <PackageReference Include="CodeShellCore.Web.Razor" Version="5.0.6.2" />
   </ItemGroup>
 
 </Project>

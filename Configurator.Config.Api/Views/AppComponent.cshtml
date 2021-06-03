@@ -1,3 +1,18 @@
+<ng-container *ngIf="Locale=='ar'">
+    <link href="/assets/css/plugins/bootstrap.rtl.css" rel="stylesheet" />
+    <link href="/assets/css/moldster.css" rel="stylesheet" />
+    <link href="/assets/css/moldster.rtl.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link href="/assets/css/style.rtl.css" rel="stylesheet" />
+    <link href="/assets/css/treeStyle.rtl.css" rel="stylesheet" />
+</ng-container>
+
+<ng-container *ngIf="Locale=='en'">
+    <link href="/assets/css/plugins/bootstrap.css" rel="stylesheet" />
+    <link href="/assets/css/moldster.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+</ng-container>
+
 <div [@loader]="ShowLoader ? 'shown' : 'hidden'" class="loader-overlay">
     <div class="loader"></div>
 </div>
@@ -14,7 +29,7 @@
     </div>
 </div>
 
-<div [ngClass]="Config.Locale=='ar'? 'ui-rtl':null" [dir]="Config.Locale=='ar'? 'rtl':null">
+<div [ngClass]="Locale=='ar'? 'ui-rtl':null" [dir]="Locale=='ar'? 'rtl':null">
     <ng-template test-loader></ng-template>
 
     <p-dialog #deleteDialog [(visible)]="deleteDialogShow" [modal]="true" width="600">

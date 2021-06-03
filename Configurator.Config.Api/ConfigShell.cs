@@ -26,8 +26,8 @@ namespace Configurator.Config.Api
         public override void RegisterServices(IServiceCollection coll)
         {
             base.RegisterServices(coll);
-            
-            
+
+
             coll.AddScriptMapping("Core/Example/Enumerations", d =>
             {
                 string st = "";
@@ -50,6 +50,8 @@ namespace Configurator.Config.Api
                 return st;
             });
         }
+
+        
 
         public override void Dispose()
         {

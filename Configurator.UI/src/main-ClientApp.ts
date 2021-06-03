@@ -1,4 +1,3 @@
-import "./polyfills";
 import "@angular/compiler";
 
 import { enableProdMode } from '@angular/core';

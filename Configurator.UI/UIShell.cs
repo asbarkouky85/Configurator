@@ -9,6 +9,8 @@ using CodeShellCore.Web;
 using CodeShellCore.DependencyInjection;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using CodeShellCore.Helpers;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Configurator.UI
 {
@@ -25,9 +27,23 @@ namespace Configurator.UI
         public override void RegisterServices(IServiceCollection coll)
         {
             base.RegisterServices(coll);
-
+            
             coll.AddScoped<ClientData>();
             coll.AddModsterSecurity();
+        }
+
+        public override void ConfigureHttp(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            app.UseRouting();
+            var originConfig = getConfig("AllowedOrigins").Value ?? "http://localhost:8050,http://127.0.0.1:8050,http://localhost:4200";
+
+            app.UseCors(d => d.WithOrigins(originConfig.Split(","))
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials());
+            app.UseStaticFiles();
+            base.ConfigureHttp(app, env);
+
         }
 
         protected override void OnReady()

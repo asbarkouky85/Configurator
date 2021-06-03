@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "wwwroot/clientApp",
+                        "outputPath": "wwwroot",
                         "index": "src/index.html",
                         "main": "src/main-clientApp.ts",
                         "polyfills": "src/polyfills.ts",
@@ -43,8 +43,8 @@
                         "production": {
                             "fileReplacements": [
                                 {
-                                    "replace": "src/base/server-config.ts",
-                                    "with": "src/base/server-config.prod.ts"
+                                    "replace": "src/core/base/server-config.ts",
+                                    "with": "src/core/base/server-config.prod.ts"
                                 }
                             ],
                             "optimization": true,

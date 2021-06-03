@@ -3,7 +3,9 @@
 @model NotificationDTO
 @{
     Layout = Html.Config().Layout;
-    Html.ModalModel().Attrs = new { calc__width = "1000" };
+    Html.ModalModel().Attrs = new { 
+        //calc__width = "1000"
+    };
 }
 
 <div class="output-word-container" #container>
