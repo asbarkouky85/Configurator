@@ -8,20 +8,24 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Backups\**" />
     <Compile Remove="Logs\**" />
     <Compile Remove="Security\**" />
     <Compile Remove="wwwroot\**" />
+    <Content Remove="Backups\**" />
     <Content Remove="Logs\**" />
     <Content Remove="Security\**" />
     <Content Remove="wwwroot\**" />
     <Content Remove="Views\**" />
+    <EmbeddedResource Remove="Backups\**" />
     <EmbeddedResource Remove="Logs\**" />
     <EmbeddedResource Remove="Security\**" />
     <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="Backups\**" />
     
     <None Remove="Logs\**" />
     
@@ -55,11 +59,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Backups\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="CodeShellCore.Web.Razor" Version="2.15.11" />
+    <PackageReference Include="CodeShellCore.Web.Razor" Version="5.0.6" />
   </ItemGroup>
 
 </Project>

@@ -16,12 +16,9 @@ using CodeShellCore.Security.Authorization;
 
 namespace Configurator.Config.Api
 {
-    public class ConfigShell : CodeShellCore.Web.WebShell
+    public class ConfigShell : MoldsterWebShell
     {
-        protected override bool useLocalization { get { return false; } }
-
-        protected override CultureInfo defaultCulture => new CultureInfo("en");
-
+        protected override bool MigrateOnStartup => false;
         public ConfigShell(IConfiguration config) : base(config)
         {
         }
@@ -29,13 +26,6 @@ namespace Configurator.Config.Api
         public override void RegisterServices(IServiceCollection coll)
         {
             base.RegisterServices(coll);
-            coll.AddMoldsterWeb();
-            
-            coll.AddMoldsterConfigurator();
-            coll.AddMoldsterServerGeneration();
-            coll.AddCodeShellEmbeddedViews();
-            coll.AddMoldsterRazorHelpers();
-
             
             
             coll.AddScriptMapping("Core/Example/Enumerations", d =>
@@ -59,24 +49,6 @@ namespace Configurator.Config.Api
                 st += d.MapEntity<CustomTextRequest>();
                 return st;
             });
-        }
-
-        public override void AddMvcFeatures(IMvcBuilder mvc)
-        {
-            mvc.AddMoldsterConfiguratorControllers();
-        }
-
-        public override void ConfigureHttp(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            app.UseMoldsterServerGeneration();
-            base.ConfigureHttp(app, env);
-
-        }
-
-        protected override void OnReady()
-        {
-            base.OnReady();
-            this.ConfigureAngular2Razor();
         }
 
         public override void Dispose()

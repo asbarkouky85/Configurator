@@ -99,4 +99,7 @@
   <data name="Parameters__PageReferenceList" xml:space="preserve">
     <value>Page References</value>
   </data>
+  <data name="PageControls__CustomizeAppComponent" xml:space="preserve">
+    <value />
+  </data>
 </root>
