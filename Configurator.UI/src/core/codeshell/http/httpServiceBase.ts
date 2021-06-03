@@ -52,7 +52,6 @@ export abstract class HttpServiceBase {
         //this.Sessions = SessionManager.Current;
         this.TokenStorage = Shell.Injector.get(TokenStorage);
         this.Server = Shell.Injector.get(ServerConfigBase);
-
     }
 
     private get _base() {

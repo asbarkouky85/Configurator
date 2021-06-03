@@ -1,10 +1,15 @@
+import "./polyfills";
+import "@angular/compiler";
+
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './client-app/app.module';
 import { ServerConfig } from '@base/server-config';
 
-if ((new ServerConfig()).Production) {
+var conf = new ServerConfig();
+
+if (conf.Production) {
   enableProdMode();
 }
 

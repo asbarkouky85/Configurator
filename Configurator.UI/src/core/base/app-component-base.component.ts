@@ -10,13 +10,14 @@ import { TenantsService } from "./http";
 import { Tenant, UseState } from "./models";
 import { AppInfo, ServerConfig } from "./server-config";
 
-@Component({template:''})
+@Component({ template: '' })
 export class AppComponentBase extends AppBaseComponent {
 
     AppList: AppInfo[] = [];
     TenantList: Tenant[] = [];
 
     ready: boolean = false;
+    RedirectToLogin = true;
 
     OnAppChanged: EventEmitter<AppInfo> = new EventEmitter<AppInfo>();
     OnTenantChanged: EventEmitter<Tenant | undefined> = new EventEmitter<Tenant | undefined>();
@@ -100,7 +101,7 @@ export class AppComponentBase extends AppBaseComponent {
     }
 
     OnStartupNoSession(res: any) {
-        this.Router.navigateByUrl("/Login");
+        this.Router.navigateByUrl("/login");
     }
 
     OnLogStatusChanged(st: boolean) {

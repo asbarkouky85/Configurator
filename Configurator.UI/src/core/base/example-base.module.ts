@@ -14,7 +14,7 @@ import { ServerConfig } from "./server-config";
     declarations: [Login, TopBar, NavigationSideBar],
 
     imports: [
-        CodeShellModule,
+        CodeShellModule.forRoot(),
     ],
     exports: [
         CodeShellModule,

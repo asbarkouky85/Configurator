@@ -65,8 +65,8 @@ tr.selected {
     float: left;
 }
 
-.radio-group .btn {
-}
+/* .radio-group .btn {
+} */
 
 .btnToggle input[type=radio] {
     display: none
@@ -213,8 +213,8 @@ tr.selected {
     text-align:left;
 }
 
-.not-mob {
-}
+/* .not-mob {
+} */
 
 .mob {
     display: none !important;
@@ -402,8 +402,8 @@ tr.selected {
     width: 100%;
 }
 
-.table.informative {
-}
+/* .table.informative {
+} */
 
     .table.informative > thead > tr > th,
     .table.informative > tbody > tr > th,
@@ -460,9 +460,9 @@ i.fa-sort{
 .sorting-head-ASC i.fa-sort, .sorting-head-DESC i.fa-sort {
     color: black;
 }
-.sorting-head-ASC, .sorting-head-DESC {
-    /*text-shadow:0px 0px 2px black;*/
-}
+/* .sorting-head-ASC, .sorting-head-DESC {
+    /*text-shadow:0px 0px 2px black;
+} */
 
     .sorting-head-ASC > i, .sorting-head-DESC > i {
         color: #54579d;

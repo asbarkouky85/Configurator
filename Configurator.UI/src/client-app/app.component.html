@@ -13,7 +13,7 @@
     <link href="/assets/css/style.css" rel="stylesheet" />
 </ng-container>
 
-<div [@loader]="ShowLoader ? 'shown' : 'hidden'" class="loader-overlay">
+<div [hidden]="!ShowLoader" class="loader-overlay">
     <div class="loader"></div>
 </div>
 

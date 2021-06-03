@@ -34,7 +34,7 @@ export class TopBar extends TopBarBase {
         super.ngOnInit();
         this.apps = (Shell.Injector.get(ServerConfigBase) as ServerConfig).Apps;
         this.currentApp = ServerConfig.CurrentApp;
-        this.Tasks.Start();
+        //this.Tasks.Start();
     }
 
     appChanged() {

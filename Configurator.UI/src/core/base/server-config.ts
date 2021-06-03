@@ -6,13 +6,8 @@ export class AppInfo {
 }
 
 export class ServerConfig extends ServerConfigBase {
-    DefaultLocale: string = "";
-    Version?: string | null | undefined;
-    GoogleKey: string = "";
-    BaseURL: string = "";
-    Domain: string = "";
-    Locale: string = "";
-    Urls: any = {};
+    DefaultLocale = "en";
+    ApiUrl = "http://localhost:8050/";
     Apps: AppInfo[] = [];
     static CurrentApp: AppInfo | null = null;
 }
