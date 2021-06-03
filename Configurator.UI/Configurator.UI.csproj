@@ -10,35 +10,26 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
 <Version>2.15.2.0</Version>
 <AssemblyVersion>2.15.2.0</AssemblyVersion>
 <FileVersion>2.15.2.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Core\**" />
     <Compile Remove="Logs\**" />
+    <Content Remove="Core\**" />
     <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Core\**" />
     <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Core\**" />
     <None Remove="Logs\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="moldsterApps.json" />
     <Content Remove="tenantInfo.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Core\codeshell\baseComponents\NavigationSideBarBase.ts" />
-    <None Remove="Core\codeshell\baseComponents\topBarBase.ts" />
-    <None Remove="Core\Example\Http\AccountService.ts" />
-    <None Remove="Core\Example\Http\BuilderService.ts" />
-    <None Remove="Core\Example\Http\ConfigPagesService.ts" />
-    <None Remove="Core\Example\Http\OutPutListener.ts" />
-    <None Remove="Core\Example\Http\ServerGenerationService.ts" />
-    <None Remove="Core\Example\Http\SqlCommandsService.ts" />
-    <None Remove="Core\Example\Http\TasksListener.ts" />
-    <None Remove="Core\Example\TenantComponentBase.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,24 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="Core\codeshell\baseComponents\NavigationSideBarBase.ts" />
-    <TypeScriptCompile Include="Core\codeshell\baseComponents\topBarBase.ts" />
-    <TypeScriptCompile Include="Core\Example\Http\AccountService.ts" />
-    <TypeScriptCompile Include="Core\Example\Http\BuilderService.ts" />
-    <TypeScriptCompile Include="Core\Example\Http\ConfigPagesService.ts" />
-    <TypeScriptCompile Include="Core\Example\Http\TasksListener.ts" />
-    <TypeScriptCompile Include="Core\Example\Http\OutPutListener.ts" />
-    <TypeScriptCompile Include="Core\Example\Http\ServerGenerationService.ts" />
-    <TypeScriptCompile Include="Core\Example\Http\SqlCommandsService.ts" />
-    <TypeScriptCompile Include="Core\Example\TenantComponentBase.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Core\Example\Generations\Http\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="CodeShellCore.Web" Version="2.15.10" />
+    <PackageReference Include="CodeShellCore.Web" Version="5.0.6" />
   </ItemGroup>
 
   <ItemGroup>

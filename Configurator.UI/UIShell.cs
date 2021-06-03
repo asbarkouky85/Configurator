@@ -12,9 +12,10 @@ using CodeShellCore.Helpers;
 
 namespace Configurator.UI
 {
-    public class UIShell : MoldsterShell
+    public class UIShell : WebShell
     {
         protected override bool useLocalization => false;
+        protected override bool IsSpa => true;
 
         protected override CultureInfo defaultCulture => new CultureInfo("en");
         public UIShell(IConfiguration config) : base(config)
@@ -28,7 +29,7 @@ namespace Configurator.UI
             coll.AddScoped<ClientData>();
             coll.AddModsterSecurity();
         }
-        
+
         protected override void OnReady()
         {
             base.OnReady();
@@ -38,7 +39,7 @@ namespace Configurator.UI
                 Name = d.Name,
                 ConfigUrl = d.ConfigUrl
             }).ToArray());
-            
+
         }
 
     }

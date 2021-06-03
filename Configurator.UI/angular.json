@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-    "clientApp": {
+        "clientApp": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/clientApp",
+                        "outputPath": "wwwroot/clientApp",
                         "index": "src/index.html",
                         "main": "src/main-clientApp.ts",
                         "polyfills": "src/polyfills.ts",
@@ -36,17 +36,15 @@
                             "src/favicon.ico",
                             "src/assets"
                         ],
-                        "styles": [
-                            
-                        ],
+                        "styles": [],
                         "scripts": []
                     },
                     "configurations": {
                         "production": {
                             "fileReplacements": [
                                 {
-                                    "replace": "src/environments/environment.ts",
-                                    "with": "src/environments/environment.prod.ts"
+                                    "replace": "src/base/server-config.ts",
+                                    "with": "src/base/server-config.prod.ts"
                                 }
                             ],
                             "optimization": true,
@@ -103,7 +101,7 @@
                 }
             }
         }
-    },     
+    },
     "defaultProject": "clientApp",
     "cli": {
         "analytics": false

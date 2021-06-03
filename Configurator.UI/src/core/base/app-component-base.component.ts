@@ -7,8 +7,8 @@ import { SessionManager, UserDTO } from "codeshell/security";
 import { Stored } from "codeshell/services";
 import { GenerationInofBase } from "./generations/generation-inof-base.component";
 import { TenantsService } from "./http";
-import { Tenant, UseState } from "./models";
-import { AppInfo, ServerConfig } from "./server-config";
+import { AppInfo, Tenant, UseState } from "./models";
+import { ServerConfig } from "./server-config";
 
 @Component({ template: '' })
 export class AppComponentBase extends AppBaseComponent {

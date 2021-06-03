@@ -15,8 +15,13 @@ export class LogMessage {
     isNew?: boolean;
 }
 
+export class AppInfo {
+    Name: string = "";
+    ConfigUrl: string = "";
+}
+
 export class Tenant {
-    id:number=0;
+    id: number = 0;
     code: string = "";
-    
+
 }
