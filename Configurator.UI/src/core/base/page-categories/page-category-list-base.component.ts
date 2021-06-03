@@ -4,9 +4,9 @@ import { Shell } from "codeshell";
 import { ListComponentBase } from "codeshell/base-components";
 import { RecursionModel } from "codeshell/recursion";
 
-@Component({template:''})
-export abstract class PageCategoryListBase extends ListComponentBase{
-    get Service(): PageCategoriesService { return Shell.Injector.get(PageCategoriesService); }
+@Component({ template: '' })
+export abstract class PageCategoryListBase extends ListComponentBase {
+    Service = new PageCategoriesService();
 
     Domain?: RecursionModel;
 
@@ -20,5 +20,5 @@ export abstract class PageCategoryListBase extends ListComponentBase{
         }
     }
 
-    
+
 }

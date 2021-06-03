@@ -1,7 +1,7 @@
 ﻿import { Injectable, ViewChild, ElementRef, Injector, Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { OutPutListener } from "@base/http/out-put-listener";
-import { ServerGenerationService } from "@base/http/servergeneration.service";
+import { ServerGenerationService } from "@base/http/server-generation.service";
 import { LogMessage } from "@base/models";
 import { BaseComponent } from "codeshell/base-components";
 import { SubmitResult } from "codeshell/results";

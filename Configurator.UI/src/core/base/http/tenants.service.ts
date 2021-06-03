@@ -1,6 +1,6 @@
 ﻿import { Injectable } from "@angular/core";
 import { SubmitResult } from "codeshell/results";
-import { ConfigHttpService } from "./confighttp.service";
+import { ConfigHttpService } from "./config-http.service";
 
 @Injectable()
 export class TenantsService extends ConfigHttpService {

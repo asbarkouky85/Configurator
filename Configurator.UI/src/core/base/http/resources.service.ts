@@ -1,5 +1,5 @@
 ﻿import { Injectable } from "@angular/core";
-import { ConfigHttpService } from "./confighttp.service";
+import { ConfigHttpService } from "./config-http.service";
 
 @Injectable()
 export class ResourcesService extends ConfigHttpService {

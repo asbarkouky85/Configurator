@@ -2,7 +2,7 @@
 import { ParameterRequestDTO } from "@base/dtos";
 import { LoadOptions } from "codeshell/data";
 import { LoadResult } from "codeshell/results";
-import { ConfigHttpService } from "./confighttp.service";
+import { ConfigHttpService } from "./config-http.service";
 
 @Injectable()
 export class PageParametersService extends ConfigHttpService {

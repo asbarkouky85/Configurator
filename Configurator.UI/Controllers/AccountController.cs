@@ -1,15 +1,18 @@
 ﻿using CodeShellCore.Security;
+using CodeShellCore.Web.Controllers;
+using CodeShellCore.Web.Moldster.Configurator;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Configurator.UI.Controllers
 {
-    public class AccountController : CodeShellCore.Web.Controllers.AccountControllerBase
+    public class AccountController : AccountControllerBase
     {
-        private readonly IUserAccessor acc;
-
-        public override IActionResult GetUserData()
+        public List<AppInfo> GetApps()
         {
-            return Respond(acc.User);
+            var c = new ConfiguratorServerConfig();
+            return c.Apps.ToList();
         }
     }
 }

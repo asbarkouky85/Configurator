@@ -1,7 +1,7 @@
 ﻿import { Injectable } from "@angular/core";
 import { LoadOptions } from "codeshell/data";
 import { SubmitResult } from "codeshell/results";
-import { ConfigHttpService } from "./confighttp.service";
+import { ConfigHttpService } from "./config-http.service";
 
 @Injectable()
 export class PageCategoriesService extends ConfigHttpService {

@@ -7,7 +7,7 @@ import { ResourceEditBase } from "./resource-edit-base.component";
 
 @Component({ template: '' })
 export abstract class ResourceListBase extends ListComponentBase {
-    get Service(): ResourcesService { return Shell.Injector.get(ResourcesService); }
+    Service = new ResourcesService();
 
     Create() {
         var req: ComponentRequest<ResourceEditBase> = { Identifier: "AddModal" };

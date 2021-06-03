@@ -16,8 +16,8 @@ export class LogMessage {
 }
 
 export class AppInfo {
-    Name: string = "";
-    ConfigUrl: string = "";
+    name: string = "";
+    configUrl: string = "";
 }
 
 export class Tenant {

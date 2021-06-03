@@ -18,11 +18,13 @@ export abstract class PageCategoriesTreeListBase extends BaseComponent {
     @ViewChild("DomainTree") DomainTree?: DomainTreeBase;
     @ViewChild("PageCategoryList") PageCategoriesList?: PageCategoryListBase;
 
-
-
     OnChanged?: () => void;
     ngOnInit() {
         Shell.Main.SideBarStatus.emit(false);
+
+    }
+
+    ngAfterViewInit() {
         if (this.DomainTree) {
             this.DomainTree.Loader = () => this.DomainSrv.GetCategoriesTree();
             this.DomainTree.LoadData();

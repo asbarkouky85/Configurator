@@ -3,7 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { GenerationInofBase } from "@base/generations/generation-inof-base.component";
 import { TenantsService } from "@base/http";
 import { OutPutListener } from "@base/http/out-put-listener";
-import { ServerGenerationService } from "@base/http/servergeneration.service";
+import { ServerGenerationService } from "@base/http/server-generation.service";
 import { Utils } from "codeshell";
 import { ListComponentBase } from "codeshell/base-components";
 import { ComponentRequest } from "codeshell/components";

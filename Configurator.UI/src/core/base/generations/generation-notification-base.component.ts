@@ -4,8 +4,8 @@ import { DomainTreeBase, DomainCountMode } from "@base/domains/domain-tree-base.
 import { DbCreationRequest } from "@base/dtos";
 import { BuilderService } from "@base/http/builder.service";
 import { OutPutListener } from "@base/http/out-put-listener";
-import { ServerGenerationService } from "@base/http/servergeneration.service";
-import { SqlCommandsService } from "@base/http/sqlcommands.service";
+import { ServerGenerationService } from "@base/http/server-generation.service";
+import { SqlCommandsService } from "@base/http/sql-commands.service";
 import { TenantComponentBase } from "@base/tenant-component-base";
 import { Shell } from "codeshell";
 import { RecursionModel } from "codeshell/recursion";

@@ -19,7 +19,7 @@
                 <ul class="nav nav-pills toolbox">
                     <li>
                         <select class="form-control" [(ngModel)]="currentApp" (change)="appChanged()">
-                            <option [ngValue]="app" *ngFor="let app of App.AppList">{{app.Name}}</option>
+                            <option [ngValue]="app" *ngFor="let app of apps">{{app.name}}</option>
                         </select>
                     </li>
                     <li>
@@ -46,7 +46,7 @@
                     <li *ngIf="isLoggedIn" role="presentation" class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             {{user.name}}
-                            <img class="img-circle" [src]="user.photo?'/'+user.photo:'/img/default_user.png'" />
+                            <img class="img-circle" [src]="user.photo?'/'+user.photo:'assets/img/default_user.png'" />
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu navbar-inverse">

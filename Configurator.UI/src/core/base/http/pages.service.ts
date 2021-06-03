@@ -3,7 +3,7 @@ import { PageParameterDTO } from "@base/dtos";
 import { PageTypes } from "@base/pages/page-select-base.component";
 import { LoadOptions } from "codeshell/data";
 import { LoadResult, SubmitResult } from "codeshell/results";
-import { ConfigHttpService } from "./confighttp.service";
+import { ConfigHttpService } from "./config-http.service";
 
 @Injectable()
 export class PagesService extends ConfigHttpService {

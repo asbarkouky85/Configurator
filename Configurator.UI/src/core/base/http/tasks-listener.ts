@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 export class TasksListener extends ServerEventListner {
 
     constructor(useServer: boolean) {
-        var url = (useServer ? (ServerConfig.CurrentApp ? ServerConfig.CurrentApp.ConfigUrl : "") : "") + "/tasksHub";
+        var url = (useServer ? (ServerConfig.CurrentApp ? ServerConfig.CurrentApp.configUrl : "") : "") + "/tasksHub";
         console.log("Connecting to " + url)
         super(url);
     }

@@ -1,6 +1,6 @@
 ﻿import { Component } from "@angular/core";
 import { PageCategoriesService } from "@base/http";
-import { ServerGenerationService } from "@base/http/servergeneration.service";
+import { ServerGenerationService } from "@base/http/server-generation.service";
 import { BaseComponentList } from "@base/models";
 import { Shell } from "codeshell";
 import { EditComponentBase } from "codeshell/base-components";

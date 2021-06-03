@@ -19,7 +19,7 @@ export abstract class HttpServiceBase {
     SignalRConnctionId?: string;
     ServiceKey?: string;
 
-    private _baseUrl?: string;
+    private _hostName?: string;
 
     public get Headers(): any {
         let head: any = {
@@ -54,16 +54,16 @@ export abstract class HttpServiceBase {
         this.Server = Shell.Injector.get(ServerConfigBase);
     }
 
-    private get _base() {
-        if (!this._baseUrl) {
-            this._baseUrl = "";
+    protected get hostName() {
+        if (!this._hostName) {
+            this._hostName = "";
             if (this.ServiceKey && this.Server.Urls[this.ServiceKey]) {
-                this._baseUrl = this.Server.Urls[this.ServiceKey];
+                this._hostName = this.Server.Urls[this.ServiceKey];
             } else if (this.Server.ApiUrl) {
-                this._baseUrl = this.Server.ApiUrl;
+                this._hostName = this.Server.ApiUrl;
             }
         }
-        return this._baseUrl;
+        return this._hostName;
     }
 
     public Get(action: string, params?: number | object): Promise<any> {
@@ -111,7 +111,7 @@ export abstract class HttpServiceBase {
 
 
     protected InitializeRequest(action: string, params?: number | object, body?: any): HttpRequest {
-        let url: string = this._base + this.BaseUrl + "/" + action;
+        let url: string = this.hostName + this.BaseUrl + "/" + action;
         let r: HttpRequest = new HttpRequest(url, params, body);
         r.Params.headers = this.Headers;
         return r;

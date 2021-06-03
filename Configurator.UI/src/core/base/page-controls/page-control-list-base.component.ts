@@ -2,7 +2,7 @@
 import { PageParameterDTO } from "@base/dtos";
 import { PageParameterTypes } from "@base/enumerations";
 import { PageControlsService, PagesService } from "@base/http";
-import { ServerGenerationService } from "@base/http/servergeneration.service";
+import { ServerGenerationService } from "@base/http/server-generation.service";
 import { PageTypes, PageSelectBase } from "@base/pages/page-select-base.component";
 import { Shell, Utils } from "codeshell";
 import { BaseComponent, EditComponentBase } from "codeshell/base-components";

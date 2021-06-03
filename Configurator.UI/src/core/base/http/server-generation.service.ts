@@ -1,6 +1,6 @@
 import { RenderDTO, DbCreationRequest, PreviewData } from "@base/dtos";
 import { SubmitResult } from "codeshell/results";
-import { ConfigHttpService } from "./confighttp.service";
+import { ConfigHttpService } from "./config-http.service";
 
 export class ServerGenerationService extends ConfigHttpService {
 

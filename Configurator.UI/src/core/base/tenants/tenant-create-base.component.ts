@@ -2,10 +2,10 @@
 import { ActivatedRoute } from "@angular/router";
 import { GenerationInofBase } from "@base/generations/generation-inof-base.component";
 import { TenantsService } from "@base/http";
-import { ConfigPagesService } from "@base/http/configpages.service";
+import { ConfigPagesService } from "@base/http/config-pages.service";
 import { OutPutListener } from "@base/http/out-put-listener";
-import { ServerGenerationService } from "@base/http/servergeneration.service";
-import { SqlCommandsService } from "@base/http/sqlcommands.service";
+import { ServerGenerationService } from "@base/http/server-generation.service";
+import { SqlCommandsService } from "@base/http/sql-commands.service";
 import { PageCategoryCreateBase } from "@base/page-categories/page-category-create-base.component";
 import { Shell, Utils } from "codeshell";
 import { DTOEditComponentBase } from "codeshell/base-components";

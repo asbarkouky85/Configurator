@@ -1,17 +1,17 @@
 ﻿import { Component } from "@angular/core";
+import { EventEmitter } from "@angular/core";
 import { Injectable, Output } from "@angular/core";
 import { NavigationGroupsService } from "@base/http";
 import { Shell } from "codeshell";
 import { ListComponentBase } from "codeshell/base-components";
 import { LoadOptions } from "codeshell/data";
 import { NoteType } from "codeshell/results";
-import * as EventEmitter from "events";
 
-@Component({template:''})
+@Component({ template: '' })
 export abstract class NaveListBase extends ListComponentBase {
-    get Service(): NavigationGroupsService { return Shell.Injector.get(NavigationGroupsService); }
+    Service = new NavigationGroupsService();
 
-    @Output() valueChange = new EventEmitter();
+    @Output() valueChange = new EventEmitter<any>();
 
     options: LoadOptions = { Showing: 0, Skip: 0 };
 
@@ -46,7 +46,7 @@ export abstract class NaveListBase extends ListComponentBase {
     }
 
     save() {
-        
+
         if (this.model.name == null) {
             this.Notify("Opps! name is required", NoteType.Error, undefined);
             this.isNew = false;

@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 export class OutPutListener extends ServerEventListner {
 
     constructor(useServer: boolean = true) {
-        var url = (useServer ? (ServerConfig.CurrentApp ? ServerConfig.CurrentApp.ConfigUrl : "") : "") + "/generationHub";
+        var url = (useServer ? (ServerConfig.CurrentApp ? ServerConfig.CurrentApp.configUrl : "") : "") + "/generationHub";
         super(url);
     }
 

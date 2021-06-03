@@ -1,6 +1,6 @@
 ﻿import { Injectable } from "@angular/core";
 import { RecursionModel } from "codeshell/recursion";
-import { ConfigHttpService } from "./confighttp.service";
+import { ConfigHttpService } from "./config-http.service";
 
 
 @Injectable()

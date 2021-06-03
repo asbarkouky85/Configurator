@@ -2,7 +2,7 @@
 import { CustomTextRequest } from "@base/dtos";
 import { LoadOptions, ListItem } from "codeshell/data";
 import { LoadResult } from "codeshell/results";
-import { ConfigHttpService } from "./confighttp.service";
+import { ConfigHttpService } from "./config-http.service";
 
 @Injectable()
 export class CustomTextsService extends ConfigHttpService {

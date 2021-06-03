@@ -6,18 +6,19 @@ import { EntityHttpService } from "codeshell/http";
 export abstract class ConfigHttpService extends EntityHttpService {
 
     connectionId: string = "";
+    get hostName() { return ""; }
 
     get CurrentAppUrl(): string {
         if (ServerConfig.CurrentApp)
-            return ServerConfig.CurrentApp.ConfigUrl;
+            return ServerConfig.CurrentApp.configUrl;
         return "";
     }
 
     protected AddCustomHeaders(heads: { [key: string]: string }) {
 
         if (ServerConfig.CurrentApp)
-            heads["app-name"] = ServerConfig.CurrentApp.Name;
-        
+            heads["app-name"] = ServerConfig.CurrentApp.name;
+
         if (this.connectionId)
             heads["connection-id"] = this.connectionId;
 
