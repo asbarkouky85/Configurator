@@ -14,6 +14,7 @@ export class TopBar extends TopBarBase {
     tenants: Tenant[] = [];
     Tasks = new TasksListener(true);
     sub: any = null;
+    showUserMenu: boolean = false;
 
     get App(): AppComponentBase { return Shell.MainAs<AppComponentBase>(); }
 
@@ -30,6 +31,10 @@ export class TopBar extends TopBarBase {
         });
     }
 
+    toggleMenu() {
+        this.showUserMenu = !this.showUserMenu;
+    }
+
     ngOnInit() {
         super.ngOnInit();
 
@@ -37,7 +42,7 @@ export class TopBar extends TopBarBase {
             this.apps = res;
             this.currentApp = ServerConfig.CurrentApp;
         })
-        
+
         //this.Tasks.Start();
     }
 
