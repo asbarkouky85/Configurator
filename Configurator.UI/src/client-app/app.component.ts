@@ -13,6 +13,5 @@ export class AppComponent extends AppComponentBase {
     constructor(inj: Injector, trans: Title) {
         super(inj, trans);
         Shell.Main = this;
-        
     }
 }

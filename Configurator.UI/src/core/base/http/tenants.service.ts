@@ -6,7 +6,7 @@ import { ConfigHttpService } from "./config-http.service";
 export class TenantsService extends ConfigHttpService {
 
     protected get BaseUrl(): string {
-        return this.CurrentAppUrl + "/apiAction/Tenants";
+        return  "/apiAction/Tenants";
     }
 
     CreateTenant(dto: any): Promise<SubmitResult> {

@@ -111,13 +111,12 @@ export abstract class HttpServiceBase {
 
 
     protected InitializeRequest(action: string, params?: number | object, body?: any): HttpRequest {
-        let url: string = this.hostName + this.BaseUrl + "/" + action;
+
+        let url: string = Utils.Combine(this.hostName, this.BaseUrl, action);
         let r: HttpRequest = new HttpRequest(url, params, body);
         r.Params.headers = this.Headers;
         return r;
     }
-
-
 
     protected async process(method: Methods, req: HttpRequest): Promise<any> {
         var p = new Promise<any>(() => { });

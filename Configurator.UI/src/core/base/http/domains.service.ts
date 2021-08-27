@@ -7,7 +7,7 @@ import { ConfigHttpService } from "./config-http.service";
 export class DomainsService extends ConfigHttpService {
 
     protected get BaseUrl(): string {
-        return this.CurrentAppUrl + "/apiAction/Domains";
+        return "/apiAction/Domains";
     }
 
     PageCounters(tenantId: number): Promise<{ [key: number]: number }> {

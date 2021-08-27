@@ -5,7 +5,7 @@ import { ConfigHttpService } from "./config-http.service";
 export class ResourcesService extends ConfigHttpService {
 
     protected get BaseUrl(): string {
-        return this.CurrentAppUrl + "/apiAction/Resources";
+        return "/apiAction/Resources";
     }
 
    

@@ -7,7 +7,7 @@ import { ConfigHttpService } from "./config-http.service";
 export class PageCategoriesService extends ConfigHttpService {
 
     protected get BaseUrl(): string {
-        return this.CurrentAppUrl + "/apiAction/PageCategories";
+        return "/apiAction/PageCategories";
     }
 
     GetPageCategoryByDomain(domainId: number, opts: LoadOptions) {

@@ -5,7 +5,7 @@ import { ConfigHttpService } from "./config-http.service";
 export class ConfigPagesService extends ConfigHttpService {
 
     get BaseUrl() {
-        return this.CurrentAppUrl + "/apiAction/Pages";
+        return "/apiAction/Pages";
     }
 
     PageMoved(req: any): Promise<SubmitResult> {

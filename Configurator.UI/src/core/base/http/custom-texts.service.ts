@@ -7,8 +7,8 @@ import { ConfigHttpService } from "./config-http.service";
 @Injectable()
 export class CustomTextsService extends ConfigHttpService {
 
-    protected get BaseUrl(): string {
-        return this.CurrentAppUrl + "/apiAction/CustomTexts";
+     get BaseUrl(): string {
+        return "/apiAction/CustomTexts";
     }
 
     async GetData(req: CustomTextRequest, opts: LoadOptions): Promise<LoadResult> {

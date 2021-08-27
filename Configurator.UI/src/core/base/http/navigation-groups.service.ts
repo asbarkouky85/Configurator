@@ -9,7 +9,7 @@ export class NavigationGroupsService extends ConfigHttpService {
   
 
     protected get BaseUrl(): string {
-        return this.CurrentAppUrl + "/apiAction/NavigationGroups";
+        return "/apiAction/NavigationGroups";
     }
 
     naveId: number = 0;

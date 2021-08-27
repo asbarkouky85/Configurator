@@ -5,7 +5,7 @@ import { ConfigHttpService } from "./config-http.service";
 export class ServerGenerationService extends ConfigHttpService {
 
     get BaseUrl() {
-        return this.CurrentAppUrl + "/apiAction/Generation";
+        return "/apiAction/Generation";
     }
 
     ProcessForPage(pageId: number): Promise<SubmitResult> {

@@ -12,7 +12,7 @@ export class TopBar extends TopBarBase {
     apps: AppInfo[] = [];
     currentApp: AppInfo | null = null;
     tenants: Tenant[] = [];
-    Tasks = new TasksListener(true);
+    Tasks: TasksListener;
     sub: any = null;
     showUserMenu: boolean = false;
 
@@ -21,14 +21,7 @@ export class TopBar extends TopBarBase {
     constructor() {
         super();
 
-        this.Tasks.KeepAlive = true;
-        this.Tasks.TaskChanged.subscribe(d => {
-            var n: { [key: string]: string } = {};
-            n.tenantCode = d.tenantCode as string;
-            n.version = d.version as string;
-            var mess = Shell.Message(d.message as string, n.tenantCode, n.version);
-            Shell.Main.ShowPrompt(mess);
-        });
+
     }
 
     toggleMenu() {
@@ -41,9 +34,19 @@ export class TopBar extends TopBarBase {
         this.App.getAppListAsync().then(res => {
             this.apps = res;
             this.currentApp = ServerConfig.CurrentApp;
+            this.Tasks = new TasksListener(this.currentApp.configUrl);
+            this.Tasks.KeepAlive = true;
+            this.Tasks.TaskChanged.subscribe(d => {
+                var n: { [key: string]: string } = {};
+                n.tenantCode = d.tenantCode as string;
+                n.version = d.version as string;
+                var mess = Shell.Message(d.message as string, n.tenantCode, n.version);
+                Shell.Main.ShowPrompt(mess);
+            });
+            this.Tasks.Start();
         })
 
-        //this.Tasks.Start();
+
     }
 
     appChanged() {

@@ -1,17 +1,15 @@
 ﻿import { Injector, ComponentFactoryResolver, ComponentRef, EventEmitter, ViewChild, Component } from "@angular/core";
-import { Router, RouterOutlet } from "@angular/router";
+import { Router } from "@angular/router";
 import { Title } from "@angular/platform-browser";
 
-import { ToastrService } from "ngx-toastr";
 
-import { DeleteResult, NoteType, SubmitResult } from "../results";
+import { NoteType, SubmitResult } from "../results";
 import { ServerConfigBase } from "../serverConfigBase";
 import { BaseComponent } from ".";
 import { Shell } from "../shell";
 import { Registry } from "../moldster/registry";
 import { TopBarBase } from "./top-bar-base-component";
 import { SessionManager, UserDTO } from "codeshell/security";
-import { HttpClient } from "@angular/common/http";
 import { ComponentLoader } from "codeshell/directives";
 import { TranslationService } from 'codeshell/localization/translationService';
 import { Culture } from "codeshell/localization/locale-data";
@@ -60,7 +58,6 @@ export abstract class AppBaseComponent {
 
         this._translation = _injecto.get(TranslationService);
         this.Locale = Culture.Current.Language;
-        
         this.ChangeLangAsync(this.Locale, true);
 
         SessionManager.StartApp();
@@ -133,7 +130,7 @@ export abstract class AppBaseComponent {
         this.promptMessage = Shell.Message(data);
         this.promptShow = true;
     }
-
+    i = 0;
     ShowLoading() {
         this.ShowLoader = true;
         if (this._loaderTimeout)
@@ -151,7 +148,6 @@ export abstract class AppBaseComponent {
     }
 
     GetDialogAs<T extends BaseComponent>(path: string): ComponentRef<T> | null {
-        
         if (path == null)
             return null;
         let e = Registry.Get(path);

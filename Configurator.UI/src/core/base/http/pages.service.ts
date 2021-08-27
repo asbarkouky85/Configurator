@@ -10,7 +10,7 @@ export class PagesService extends ConfigHttpService {
 
 
     protected get BaseUrl(): string {
-        return this.CurrentAppUrl + "/apiAction/Pages";
+        return "/apiAction/Pages";
     }
 
 

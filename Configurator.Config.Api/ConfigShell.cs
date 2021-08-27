@@ -13,12 +13,14 @@ using CodeShellCore.Moldster.Builder;
 using CodeShellCore.Moldster.Dto;
 using CodeShellCore.Moldster.Localization;
 using CodeShellCore.Security.Authorization;
+using System;
 
 namespace Configurator.Config.Api
 {
     public class ConfigShell : MoldsterWebShell
     {
         protected override bool MigrateOnStartup => false;
+        
         public ConfigShell(IConfiguration config) : base(config)
         {
         }
@@ -27,7 +29,7 @@ namespace Configurator.Config.Api
         {
             base.RegisterServices(coll);
 
-
+            
             coll.AddScriptMapping("Core/Example/Enumerations", d =>
             {
                 string st = "";

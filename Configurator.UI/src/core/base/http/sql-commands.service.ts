@@ -4,7 +4,7 @@ import { ConfigHttpService } from "./config-http.service";
 
 export class SqlCommandsService extends ConfigHttpService {
     get BaseUrl() {
-        return this.CurrentAppUrl + "/apiAction/SqlCommands";
+        return "/apiAction/SqlCommands";
     }
 
     CreateTenantDatabase(dto: DbCreationRequest): Promise<SubmitResult> {

@@ -3,7 +3,7 @@ import { SubmitResult } from "codeshell/results";
 import { ConfigHttpService } from "./config-http.service";
 
 export class BuilderService extends ConfigHttpService {
-    protected get BaseUrl(): string { return this.CurrentAppUrl + "/apiAction/Builder" };
+    protected get BaseUrl(): string { return "/apiAction/Builder" };
 
     Init(replace?: boolean|null): Promise<SubmitResult> {
         return this.Post("Init", {}, { replace: replace });

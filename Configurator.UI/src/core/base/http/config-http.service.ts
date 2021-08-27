@@ -6,7 +6,7 @@ import { EntityHttpService } from "codeshell/http";
 export abstract class ConfigHttpService extends EntityHttpService {
 
     connectionId: string = "";
-    get hostName() { return ""; }
+    get hostName() { return this.CurrentAppUrl; }
 
     get CurrentAppUrl(): string {
         if (ServerConfig.CurrentApp)
