@@ -107,5 +107,6 @@
   "CustomText__Value": "Value",
   "ParameterRequestDTO__ParameterTypeId": "Parameter type id",
   "ParameterRequestDTO__Type": "Type",
-  "ModuleRequestDTO__Replace": "Replace"
+  "ModuleRequestDTO__Replace": "Replace",
+  "Tenant__LogoFile": "Logo file"
 }

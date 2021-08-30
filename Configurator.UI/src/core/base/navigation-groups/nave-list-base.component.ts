@@ -53,7 +53,7 @@ export abstract class NaveListBase extends ListComponentBase {
         }
         else {
             this.Service.create(this.model).then(res => {
-                console.log(res);
+                
                 this.Notify("success! navigation added successfully", NoteType.Success, undefined);
                 this.isNew = false;
                 this.LoadData();

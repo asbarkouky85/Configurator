@@ -5,15 +5,14 @@ import { Observable } from "rxjs";
 
 export class TasksListener extends ServerEventListner {
 
+    
     constructor(server: string) {
-
-        var url = server + "/tasksHub";
-        
-        console.log("Connecting to " + url)
-        super(url);
+        super("/tasksHub", server);
     }
 
     get TaskChanged(): Observable<BundlingTask> {
         return this.ObserveAs<BundlingTask>("TaskChanged", BundlingTask);
     }
+
+  
 }

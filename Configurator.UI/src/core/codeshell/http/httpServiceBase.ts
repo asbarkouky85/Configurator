@@ -47,7 +47,8 @@ export abstract class HttpServiceBase {
 
     protected AddCustomHeaders(data: { [key: string]: string }) { }
 
-    constructor() {
+    constructor(host?: string) {
+        this._hostName = host;
         this.Client = Shell.Injector.get(HttpClient);
         //this.Sessions = SessionManager.Current;
         this.TokenStorage = Shell.Injector.get(TokenStorage);

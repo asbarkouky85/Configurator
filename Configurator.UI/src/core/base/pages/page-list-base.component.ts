@@ -5,9 +5,9 @@ import { ListComponentBase } from "codeshell/base-components";
 import { RecursionModel } from "codeshell/recursion";
 import { LoadResult } from "codeshell/results";
 
-@Component({template:''})
+@Component({ template: '' })
 export abstract class PageListBase extends ListComponentBase {
-    get Service(): PagesService { return Shell.Injector.get(PagesService); }
+    Service = new PagesService();
 
     Domain?: RecursionModel | null;
     tenantId?: number | null;
@@ -26,7 +26,7 @@ export abstract class PageListBase extends ListComponentBase {
     }
 
     render(model: any) {
-        
+
         if (this.Domain != undefined)
             this.renderModel.NameChain = this.Domain.nameChain;
 

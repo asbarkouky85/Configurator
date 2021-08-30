@@ -5,13 +5,15 @@ import { Observable } from "rxjs";
 
 
 export class OutPutListener extends ServerEventListner {
-
+    
     constructor(useServer: boolean = true) {
-        var url = (useServer ? (ServerConfig.CurrentApp ? ServerConfig.CurrentApp.configUrl : "") : "") + "/generationHub";
-        super(url);
+        let server = (useServer ? (ServerConfig.CurrentApp ? ServerConfig.CurrentApp.configUrl : "") : "")
+        //var url = (useServer ? (ServerConfig.CurrentApp ? ServerConfig.CurrentApp.configUrl : "") : "") + "/generationHub";
+        super("/generationHub", server);
+
     }
 
     get SendMessage(): Observable<LogMessage> {
-        return this.ObserveAs<LogMessage>("SendMessage",LogMessage);
+        return this.ObserveAs<LogMessage>("SendMessage", LogMessage);
     }
 }

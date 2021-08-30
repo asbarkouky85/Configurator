@@ -147,13 +147,63 @@
 </div>
 
         
-<div class="form-group col-md-6 " >
-    <label>{{'Columns.Tenant__ConnectionString' | translate }}</label>
-        <p class=""  >
-        {{model.entity.connectionString}}
-    </p>
+<div class="form-group col-md-6 "
+     id="FG_entity_connectionString"
+     #FG_entity_connectionString="bsFormGroup" bs-group
+     >
+    <label>{{'Columns.Tenant__ConnectionString' | translate }} </label>
+    <input type="text"
+       class="form-control "
+       placeholder="{{'Columns.Tenant__ConnectionString' | translate }}"
+       name="Form__entity_connectionString"
+       [(ngModel)]="model.entity.connectionString"
+       title="{{'Columns.Tenant__ConnectionString' | translate }}"
+       [li-watch]="model"
+
+       
+        >
+    <p *ngIf="!FG_entity_connectionString.Write">{{FG_entity_connectionString.Value}}</p>
+
 
     
+</div>
+
+    </div>
+    <div class="row">
+        
+<div class="form-group col-md-6 "
+     id="FG_entity_logoFile"
+     #FG_entity_logoFile="bsFormGroup" bs-group
+     >
+    <label>{{'Columns.Tenant__LogoFile' | translate }} <span style="color:red">*</span></label>
+    
+<div class="input-group">
+    <label class="form-control">
+        <a *ngIf="model.entity.logoFile"
+           class="file-link"
+           target="_blank"
+           [routerLink]="'/'+model.entity.logoFile.url">
+            {{model.entity.logoFile.name}}
+        </a>
+    </label>
+
+            <div class="input-group-btn">
+                <label class="btn btn-primary">
+                    <input name="f_logo"
+                           type="file"
+                           [(ngModel)]="f_logo"
+                           [file-uploader]="upload"
+                           [(fileData)]="model.entity.logoFile"
+                           required  
+                           style="display:none">
+                    <i class="fa fa-upload"></i>
+                </label>
+            </div>
+</div>
+
+    <span *ngIf="Form.controls['f_logo'] && Form.controls['f_logo'].invalid">
+        <small *ngIf="Form.controls['f_logo'].errors!.required" class="form-text text-danger">{{'Messages.field_required' | translate : {p0:'Columns.Tenant__LogoFile' | translate } }}</small>
+</span>
 </div>
 
     </div>

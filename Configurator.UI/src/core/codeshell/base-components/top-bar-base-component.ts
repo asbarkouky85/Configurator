@@ -38,7 +38,6 @@ export class TopBarBase {
     private _startListener() {
         if (this.Listener) {
             this.Listener.NotificationsChanged.subscribe(e => {
-                console.log(e);
                 this.notificationCount = e;
                 this.OnNotificationChanged(e);
             });

@@ -44,7 +44,6 @@ export class NavigationSideBarBase {
 
     GotoMain() {
         var main = absUrl(this.GetMainUrl());
-        console.log(main);
         this.Router.navigateByUrl(main);
     }
 

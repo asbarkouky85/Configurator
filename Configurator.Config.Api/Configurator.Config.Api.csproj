@@ -50,16 +50,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="$(CODESHELL_HOME)\CodeShellCore.Web.Razor\CodeShellCore.Web.Razor.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="ShellComponents\Angular\Containers\Cell.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Update="Views\_ViewImports.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="CodeShellCore.Web.Razor" Version="5.1.2" />
   </ItemGroup>
 
 </Project>

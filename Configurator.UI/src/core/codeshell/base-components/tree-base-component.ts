@@ -94,9 +94,6 @@ export abstract class TreeComponentBase extends BaseComponent {
         super.ngOnInit();
         let opts = this.GetLookupOptions();
 
-        if (this.treeComponent)
-            (this.treeComponent.event as EventEmitter<any>).subscribe((e: any) => this.OnEvent(e));
-
         if (opts != null) {
             this.LoadLookupsAsync(opts).then(l => {
                 this.Lookups = l;
@@ -105,6 +102,12 @@ export abstract class TreeComponentBase extends BaseComponent {
         } else {
             this.OnReady();
         }
+    }
+
+    ngAfterViewInit() {
+        super.ngAfterViewInit();
+        if (this.treeComponent)
+            (this.treeComponent.event as EventEmitter<any>).subscribe((e: any) => this.OnEvent(e));
 
     }
 

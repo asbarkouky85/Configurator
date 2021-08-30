@@ -10,8 +10,10 @@ export class ServerEventListner {
 
     get IsConnected() { return this.connection.state == HubConnectionState.Connected; }
 
+    serviceKey?: string;
     connection: HubConnection;
     connectionId: string = "";
+    config: ServerConfigBase;
     Closed: Observable<string> = new EventEmitter<string>();
     Reconnected: Observable<ServerEventListner> = new EventEmitter<ServerEventListner>();
     KeepAlive: boolean = false;
@@ -19,11 +21,27 @@ export class ServerEventListner {
     RetryTime: number = 30000;
     private _observables: { [key: string]: EventEmitter<any> } = {};
     private _interval: NodeJS.Timeout | null = null;
-
     protected _isStarted: boolean = false;
-    constructor(private hubUrl: string) {
+    private _hostName?: string;
+
+    getHostName() {
+        if (!this._hostName) {
+            this._hostName = "";
+            if (this.serviceKey && this.config.Urls[this.serviceKey]) {
+                this._hostName = this.config.Urls[this.serviceKey];
+            } else if (this.config.ApiUrl) {
+                this._hostName = this.config.ApiUrl;
+            }
+        }
+        return this._hostName;
+    }
+
+    constructor(private hubUrl: string, host?: string) {
+        this._hostName = host;
         let conf = Shell.Injector.get<ServerConfigBase>(ServerConfigBase);
-        let url = Utils.Combine(conf.ApiUrl, hubUrl);
+
+        this.config = Shell.Injector.get(ServerConfigBase);
+        let url = Utils.Combine(this.getHostName(), hubUrl);
         this.connection = new HubConnectionBuilder().withUrl(url).build();
         this.connection.serverTimeoutInMilliseconds = 12000000;
         this.connection.onclose(d => {

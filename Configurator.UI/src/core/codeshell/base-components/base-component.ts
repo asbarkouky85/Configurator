@@ -14,8 +14,8 @@ import { Permission, RouteData, SessionManager } from 'codeshell/security';
 
 @Component({ template: '' })
 export abstract class BaseComponent implements OnInit, OnDestroy {
-    
-    @Input("IsEmbedded") 
+
+    @Input("IsEmbedded")
     IsEmbedded: boolean = false;
 
     private _subs: { [key: string]: any } = {};
@@ -44,7 +44,7 @@ export abstract class BaseComponent implements OnInit, OnDestroy {
     SubmitClicked: boolean = false;
     IsChild = false;
     ModalWidth: any = 768;
-    navSection?:any;
+    navSection?: any;
 
     get Navigation(): Location { return Shell.Injector.get(Location); }
     get Loc(): LocalizablesDTO { return new LocalizablesDTO() };
@@ -110,6 +110,10 @@ export abstract class BaseComponent implements OnInit, OnDestroy {
         }
     }
 
+    getService<T>(type: new (...params) => T): T {
+        return this.Injector.get<T>(type);
+    }
+
     SortBy(prop: string) { }
 
     GetHeaderClass(prop: string): string | null { return null; }
@@ -152,7 +156,7 @@ export abstract class BaseComponent implements OnInit, OnDestroy {
             if (!comp) {
                 this._subs[opener.Identifier] = null;
             }
-            
+
             if (!createNew)
                 this._subs[opener.Identifier] = comp;
         } else {
@@ -173,7 +177,6 @@ export abstract class BaseComponent implements OnInit, OnDestroy {
         //var comp = Shell.Main.GetDialogAs<T>(path);
         let e = Registry.Get(path);
         if (e) {
-            console.log(this.Resolver)
             var fac = this.Resolver.resolveComponentFactory(e) as ComponentFactory<T>;
             let comp: ComponentRef<T> = fac.create(Shell.Injector);
             if (comp != null && Shell.Main.ModalLoader) {

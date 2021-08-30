@@ -14,7 +14,7 @@ export class PTLUseState {
     tenantCode?: string;
 }
 
-@Component({template:''})
+@Component({ template: '' })
 export abstract class PageTreeListBase extends TenantComponentBase {
     Service = new PagesService();
     TenantsService = new TenantsService();
@@ -44,6 +44,12 @@ export abstract class PageTreeListBase extends TenantComponentBase {
             this.PageList.HideHeader = true;
         }
 
+
+    }
+
+    ngAfterViewInit() {
+        super.ngAfterViewInit();
+        
         if (this.DomainTree) {
 
             this.DomainTree.tenantId = this.getTenantId();
@@ -77,7 +83,6 @@ export abstract class PageTreeListBase extends TenantComponentBase {
         if (this.PageList) {
             this.PageList.Domain = this.currentDomain;
             this.PageList.tenantId = this.getTenantId();
-            console.log(this.PageList.Domain, this.PageList.tenantId);
             this.PageList.LoadData();
         }
 
@@ -87,7 +92,6 @@ export abstract class PageTreeListBase extends TenantComponentBase {
         this.currentDomain = item;
         if (this.PageList && this.currentDomain) {
             this.LoadPages();
-
         }
         this.SaveState();
 

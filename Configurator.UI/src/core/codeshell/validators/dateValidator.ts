@@ -22,7 +22,7 @@ export class DateValidator {
     }
 
     compareDates(date1: Date, date2: Date): number {
-        
+
         if (Moment.isMoment(date1)) {
             var e = date1 as Moment.Moment;
             date1 = e.toDate()
@@ -37,7 +37,7 @@ export class DateValidator {
         date1.setHours(0, 0, 0, 0);
         date2.setHours(0, 0, 0, 0);
 
-        console.log(date1, date2);
+        //        console.log(date1, date2);
 
         if (date1 >= date2)
             return 1;
@@ -45,24 +45,21 @@ export class DateValidator {
             return 2;
     }
 
-    ngOnInit()
-    {
+    ngOnInit() {
         this.model.update.subscribe((v: Date) => {
             if (!Moment.isMoment(v))
-            v = new Date(v);
+                v = new Date(v);
             setTimeout(() => {
                 let min = this.minDate();
 
                 let max = this.maxDate();
 
                 let isValid = true;
-                if (min != null)
-                {
+                if (min != null) {
                     isValid = this.compareDates(v, min) == 1;
                 }
 
-                if (max != null && isValid)
-                {
+                if (max != null && isValid) {
                     isValid = this.compareDates(v, max) == 2;
                 }
 
@@ -73,10 +70,10 @@ export class DateValidator {
                 else {
 
                     this.model.control.setErrors({ date_validation: true });
-                    
+
                 }
             }, 200);
-            
+
 
         })
 

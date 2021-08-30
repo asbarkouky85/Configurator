@@ -7,9 +7,11 @@ import { OutPutListener } from "@base/http/out-put-listener";
 import { ServerGenerationService } from "@base/http/server-generation.service";
 import { SqlCommandsService } from "@base/http/sql-commands.service";
 import { PageCategoryCreateBase } from "@base/page-categories/page-category-create-base.component";
+import { ServerConfig } from "@base/server-config";
 import { Shell, Utils } from "codeshell";
 import { DTOEditComponentBase } from "codeshell/base-components";
 import { ComponentRequest } from "codeshell/components";
+import { FilesHttpService } from "codeshell/http";
 
 @Component({ template: '' })
 export abstract class TenantCreateBase extends DTOEditComponentBase {
@@ -25,6 +27,8 @@ export abstract class TenantCreateBase extends DTOEditComponentBase {
     LoadLookups = true;
     environments: any[] = [];
     databases: any[] = [];
+    f_logo?: string;
+    fService: FilesHttpService = new FilesHttpService("");
 
     async LoadLookupsAsync(opts: any): Promise<any> {
         this.environments = await this.Sql.GetEnvironments();
@@ -38,6 +42,7 @@ export abstract class TenantCreateBase extends DTOEditComponentBase {
             if (this.OutputListener)
                 this.OutputListener.AddMessage(d);
         });
+        this.fService = new FilesHttpService(ServerConfig.CurrentApp.configUrl);
     }
 
     DefaultModel() {
@@ -65,6 +70,10 @@ export abstract class TenantCreateBase extends DTOEditComponentBase {
                 }
             }
         }
+    }
+
+    upload = (f: FileList) => {
+        return this.fService.PostFiles("Upload", f);
     }
 
     SelectTemplate() {

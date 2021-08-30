@@ -17,6 +17,9 @@
         @Html.ControlGroup(a => a.Entity.ConnectionString, coll: Html.VCollection())
     </div>
     <div class="row">
+        @Html.FileGroup(e => e.Entity.LogoFile, "f_logo", "upload", false)
+    </div>
+    <div class="row">
         <div class="col-md-6">
             @Html.SelectModalButton("MainComponentBase", "SelectTemplate()", "model.entity.mainComponentBase")
         </div>
@@ -43,7 +46,7 @@
         @Html.SelectControlGroup(d => d.Environment, Lister.Make("environments", false), "name", "name", size: 2, inputAttr: new { evnt__change = "env_change()" })
         @Html.SelectControlGroup(d => d.DbName, Lister.Make("databases", false), "name", "name", size: 3, idExtra: "_selector")
 
-        @Html.CheckBoxGroup(d => d.Force,trueString:null,falseString:null, size: 1, inputAttr: new { title = "Force" })
+        @Html.CheckBoxGroup(d => d.Force, trueString: null, falseString: null, size: 1, inputAttr: new { title = "Force" })
 
 
         @if (Html.StartContainer("div", "update_buttons", attrs: new { @class = "from-group" }))
