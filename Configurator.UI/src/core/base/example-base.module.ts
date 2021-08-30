@@ -37,8 +37,7 @@ export class ExampleBaseModule {
             ngModule: ExampleBaseModule,
             providers: [
                 { provide: ServerConfigBase, useClass: ServerConfig },
-                { provide: AccountServiceBase, useClass: AccountService },
-                { provide: TokenStorage, useClass: SessionTokenData }
+                { provide: AccountServiceBase, useClass: AccountService }
             ]
         }
     }
