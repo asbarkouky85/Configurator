@@ -161,7 +161,7 @@ export abstract class TenantCreateBase extends DTOEditComponentBase {
                     id: 0
                 };
                 this.Sql.CreateTenantDatabase(req).then(d => {
-                    if (this.model.entity.connectionString)
+                    if (!this.model.entity.connectionString)
                         this.model.entity.connectionString = d.data.ConnectionString;
                     this.model.entity.id = d.data.TenantId;
                     this.NotifyTranslate("database_created");
