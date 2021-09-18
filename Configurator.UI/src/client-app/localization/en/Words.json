@@ -105,5 +105,8 @@
   "ParameterRequestTypes_InvalidLinks": "Invalid",
   "ParameterRequestTypes_MissingLinks": "Missing",
   "ClearFilter": "Clear filter",
-  "FixPages": "Fix pages"
+  "FixPages": "Fix pages",
+  "Database_Connection_Parameters": "Database  connection  parameters",
+  "Publish_Parameters": "Publish  parameters",
+  "Databases": "Databases"
 }

@@ -29,6 +29,10 @@ export abstract class GenerationInofBase extends BaseComponent {
     }
 
     ngOnInit() {
+
+    }
+
+    ngAfterViewInit() {
         if (this._containerRef)
             this.Container = this._containerRef.nativeElement;
     }

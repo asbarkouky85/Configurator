@@ -8,7 +8,7 @@ import { ConfigHttpService } from "./config-http.service";
 export class PageParametersService extends ConfigHttpService {
 
     protected get BaseUrl(): string {
-        return this.CurrentAppUrl+ "/apiAction/PageParameters";
+        return "/apiAction/PageParameters";
     }
 
 

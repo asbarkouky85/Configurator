@@ -25,6 +25,9 @@ import { PageCategorySelect } from './components/page-category-select.component'
     },    { 
         path: 'tenants', 
         loadChildren: () => import('./tenants/tenants.module').then(m => m.TenantsModule) 
+    },    { 
+        path: 'environments', 
+        loadChildren: () => import('./environments/environments.module').then(m => m.EnvironmentsModule) 
     },
 		])
     ],

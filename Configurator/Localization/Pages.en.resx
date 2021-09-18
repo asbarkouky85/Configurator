@@ -102,4 +102,10 @@
   <data name="PageControls__CustomizeAppComponent" xml:space="preserve">
     <value />
   </data>
+  <data name="Environments__EnvironmentList" xml:space="preserve">
+    <value>Environments</value>
+  </data>
+  <data name="Environments__EnvironmentEditEmbedded" xml:space="preserve">
+    <value />
+  </data>
 </root>

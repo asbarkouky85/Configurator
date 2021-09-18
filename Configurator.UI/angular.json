@@ -36,8 +36,7 @@
                             "src/favicon.ico",
                             "src/assets"
                         ],
-                        "styles": [
-                            {
+                        "styles": [{
                                 "bundleName": "primeicons",
                                 "input": "node_modules/primeicons/primeicons.css",
                                 "inject": true
@@ -51,18 +50,21 @@
                                 "bundleName": "primeng.theme",
                                 "input": "node_modules/primeng/resources/themes/saga-blue/theme.css",
                                 "inject": true
+                            },
+                            {
+                                "bundleName": "ng-select",
+                                "input": "@ng-select/ng-select/themes/default.theme.css",
+                                "inject": true
                             }
                         ],
                         "scripts": []
                     },
                     "configurations": {
                         "production": {
-                            "fileReplacements": [
-                                {
-                                    "replace": "src/core/base/server-config.ts",
-                                    "with": "src/core/base/server-config.prod.ts"
-                                }
-                            ],
+                            "fileReplacements": [{
+                                "replace": "src/core/base/server-config.ts",
+                                "with": "src/core/base/server-config.prod.ts"
+                            }],
                             "optimization": true,
                             "outputHashing": "all",
                             "sourceMap": false,
@@ -70,8 +72,7 @@
                             "extractLicenses": true,
                             "vendorChunk": false,
                             "buildOptimizer": true,
-                            "budgets": [
-                                {
+                            "budgets": [{
                                     "type": "initial",
                                     "maximumWarning": "2mb",
                                     "maximumError": "5mb"

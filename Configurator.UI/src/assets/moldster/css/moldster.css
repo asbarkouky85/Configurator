@@ -155,7 +155,7 @@ tr.selected>td {
 .content-wrapper.expanded {
     transition: all .7s ease-in-out, opacity 1s ease-in-out;
     margin-top: 64px;
-    position: absolute;
+    /* position: absolute; */
     top: 0px;
     bottom: 0px;
 }

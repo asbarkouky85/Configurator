@@ -57,6 +57,7 @@ export function GetDomainsData(): DomainData[] {
 				name: "Main" ,
 				children: [
 					{ name: "Tenants__TenantList", navigate: true, resource:"", action: "anonymous", apps: null , url: "generations/tenants/tenant-list"},
+					{ name: "Environments__EnvironmentList", navigate: true, resource:"", action: "allowAll", apps: null , url: "generations/environments/environment-list"},
 					{ name: "Pages__PageTreeList", navigate: true, resource:"Pages", action: "anonymous", apps: null , url: "routing/pages/page-tree-list"},
 					{ name: "CustomTexts__CustomTextList", navigate: true, resource:"", action: "allowAll", apps: null , url: "localization/custom-texts/custom-text-list"},
 					{ name: "NavigationPages__NavGroupPages", navigate: true, resource:"NavigationGroups", action: "anonymous", apps: null , url: "routing/navigation-pages/nav-group-pages"},

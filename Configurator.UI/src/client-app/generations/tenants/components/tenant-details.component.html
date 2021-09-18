@@ -147,6 +147,42 @@
 
     </div>
     <div class="row">
+        
+<div class="form-group col-md-6 "
+     id="FG_entity_logoFile"
+     #FG_entity_logoFile="bsFormGroup" bs-group
+     >
+    <label>{{'Columns.Tenant__LogoFile' | translate }} </label>
+    
+<div class="input-group">
+    <label class="form-control">
+        <a *ngIf="model.entity.logoFile"
+           class="file-link"
+           target="_blank"
+           [routerLink]="'/'+model.entity.logoFile.url">
+            {{model.entity.logoFile.name}}
+        </a>
+    </label>
+
+            <div class="input-group-btn">
+                <label class="btn btn-primary">
+                    <input name="f_logo"
+                           type="file"
+                           [(ngModel)]="f_logo"
+                           [file-uploader]="upload"
+                           [(fileData)]="model.entity.logoFile"
+                            
+                           style="display:none">
+                    <i class="fa fa-upload"></i>
+                </label>
+            </div>
+</div>
+
+    
+</div>
+
+    </div>
+    <div class="row">
         <div class="col-md-6">
             <div class="form-group"
      id="MainComponentBase" bs-group #MainComponentBase="bsFormGroup"     >

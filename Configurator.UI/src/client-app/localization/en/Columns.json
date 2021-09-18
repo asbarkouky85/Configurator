@@ -108,5 +108,17 @@
   "ParameterRequestDTO__ParameterTypeId": "Parameter type id",
   "ParameterRequestDTO__Type": "Type",
   "ModuleRequestDTO__Replace": "Replace",
-  "Tenant__LogoFile": "Logo file"
+  "Tenant__LogoFile": "Logo file",
+  "String1": "String1",
+  "MoldsterEnvironment__Name": "Name",
+  "DbConnectionParams__Server": "Server",
+  "DbConnectionParams__UserId": "User id",
+  "DbConnectionParams__Password": "Password",
+  "MoldsterEnvironment__SourceDatabase": "Source database",
+  "UploadConfig__Type": "Type",
+  "UploadConfig__Server": "Server",
+  "UploadConfig__ServerUrl": "Server url",
+  "UploadConfig__UserName": "User name",
+  "UploadConfig__Password": "Password",
+  "UploadConfig__PathOnServer": "Path on server"
 }

@@ -28,5 +28,7 @@
   "Routing__NavigationPageList": "Navigation Page List",
   "Routing__NavigationPageCreate": "Navigation Page Create",
   "Parameters__PageReferenceList": "Page References",
-  "PageControls__CustomizeAppComponent": "Customize app component"
+  "PageControls__CustomizeAppComponent": "Customize app component",
+  "Environments__EnvironmentList": "Environments",
+  "Environments__EnvironmentEditEmbedded": "Environment edit embedded"
 }
