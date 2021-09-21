@@ -154,8 +154,7 @@ tr.selected>td {
 .wrapper-side.compressed,
 .content-wrapper.expanded {
     transition: all .7s ease-in-out, opacity 1s ease-in-out;
-    margin-top: 64px;
-    position: absolute;
+    margin-top: 63px;
     top: 0px;
     bottom: 0px;
 }

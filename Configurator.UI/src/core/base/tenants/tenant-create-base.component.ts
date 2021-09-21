@@ -96,7 +96,8 @@ export abstract class TenantCreateBase extends DTOEditComponentBase {
             this.OutputListener.Clear();
         this.Listener.Start().then(conn => {
             this.Gen.connectionId = conn;
-            this.Gen.SyncTenants(1, this.model.entity.id);
+            let parent = this.model.entity.parentId ? this.model.entity.parentId : 1;
+            this.Gen.SyncTenants(parent, this.model.entity.id);
         })
     }
 
